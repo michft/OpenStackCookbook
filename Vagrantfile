@@ -41,10 +41,6 @@ Vagrant.configure("2") do |config|
     if Vagrant.has_plugin?("vagrant-cachier")
         config.cache.scope = :box
         config.cache.enable :apt
-        config.cache.synced_folder_opts = {
-          type: :nfs,
-          mount_options: ['rw', 'vers=3', 'tcp', 'nolock']
-        }
     else
         puts "[-] WARN: This would be much faster if you ran vagrant plugin install vagrant-cachier first"
     end
